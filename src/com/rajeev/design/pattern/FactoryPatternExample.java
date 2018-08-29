@@ -99,7 +99,7 @@ public class FactoryPatternExample {
 
 	public static class ComputerFactory {
 
-		public static Computer getComputer(ComputerType type, String ram, String hdd, String cpu) {
+		public static Computer createComputer(ComputerType type, String ram, String hdd, String cpu) {
 			Computer comp = null;
 			switch (type) {
 			case PC:
@@ -121,10 +121,10 @@ public class FactoryPatternExample {
 	}
 
 	public static void main(String[] args) {
-		Computer pc = ComputerFactory.getComputer(ComputerType.PC, "1GB RAM", "2TB HDD", "2-core CPU");
+		Computer pc = ComputerFactory.createComputer(ComputerType.PC, "1GB RAM", "2TB HDD", "2-core CPU");
 		System.out.println(pc.toString());
 
-		Computer server = ComputerFactory.getComputer(ComputerType.SERVER, "10GB RAM", "20TB HDD", "20-core CPU");
+		Computer server = ComputerFactory.createComputer(ComputerType.SERVER, "10GB RAM", "20TB HDD", "20-core CPU");
 		System.out.println(server.toString());
 	}
 
