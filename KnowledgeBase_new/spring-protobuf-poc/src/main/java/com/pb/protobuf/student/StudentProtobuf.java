@@ -56,6 +56,40 @@ public final class StudentProtobuf {
      */
     com.pb.protobuf.student.StudentProtobuf.StudentOrBuilder getStudentOrBuilder(
         int index);
+
+    /**
+     * <code>map&lt;int32, .student.Student&gt; student_map = 4;</code>
+     */
+    int getStudentMapCount();
+    /**
+     * <code>map&lt;int32, .student.Student&gt; student_map = 4;</code>
+     */
+    boolean containsStudentMap(
+        int key);
+    /**
+     * Use {@link #getStudentMapMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.Integer, com.pb.protobuf.student.StudentProtobuf.Student>
+    getStudentMap();
+    /**
+     * <code>map&lt;int32, .student.Student&gt; student_map = 4;</code>
+     */
+    java.util.Map<java.lang.Integer, com.pb.protobuf.student.StudentProtobuf.Student>
+    getStudentMapMap();
+    /**
+     * <code>map&lt;int32, .student.Student&gt; student_map = 4;</code>
+     */
+
+    com.pb.protobuf.student.StudentProtobuf.Student getStudentMapOrDefault(
+        int key,
+        com.pb.protobuf.student.StudentProtobuf.Student defaultValue);
+    /**
+     * <code>map&lt;int32, .student.Student&gt; student_map = 4;</code>
+     */
+
+    com.pb.protobuf.student.StudentProtobuf.Student getStudentMapOrThrow(
+        int key);
   }
   /**
    * Protobuf type {@code student.Course}
@@ -119,6 +153,19 @@ public final class StudentProtobuf {
                   input.readMessage(com.pb.protobuf.student.StudentProtobuf.Student.parser(), extensionRegistry));
               break;
             }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                studentMap_ = com.google.protobuf.MapField.newMapField(
+                    StudentMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000008;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, com.pb.protobuf.student.StudentProtobuf.Student>
+              studentMap__ = input.readMessage(
+                  StudentMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              studentMap_.getMutableMap().put(
+                  studentMap__.getKey(), studentMap__.getValue());
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -146,6 +193,18 @@ public final class StudentProtobuf {
       return com.pb.protobuf.student.StudentProtobuf.internal_static_student_Course_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 4:
+          return internalGetStudentMap();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -233,6 +292,82 @@ public final class StudentProtobuf {
       return student_.get(index);
     }
 
+    public static final int STUDENT_MAP_FIELD_NUMBER = 4;
+    private static final class StudentMapDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.Integer, com.pb.protobuf.student.StudentProtobuf.Student> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.Integer, com.pb.protobuf.student.StudentProtobuf.Student>newDefaultInstance(
+                  com.pb.protobuf.student.StudentProtobuf.internal_static_student_Course_StudentMapEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.INT32,
+                  0,
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  com.pb.protobuf.student.StudentProtobuf.Student.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.Integer, com.pb.protobuf.student.StudentProtobuf.Student> studentMap_;
+    private com.google.protobuf.MapField<java.lang.Integer, com.pb.protobuf.student.StudentProtobuf.Student>
+    internalGetStudentMap() {
+      if (studentMap_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            StudentMapDefaultEntryHolder.defaultEntry);
+      }
+      return studentMap_;
+    }
+
+    public int getStudentMapCount() {
+      return internalGetStudentMap().getMap().size();
+    }
+    /**
+     * <code>map&lt;int32, .student.Student&gt; student_map = 4;</code>
+     */
+
+    public boolean containsStudentMap(
+        int key) {
+      
+      return internalGetStudentMap().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getStudentMapMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.Integer, com.pb.protobuf.student.StudentProtobuf.Student> getStudentMap() {
+      return getStudentMapMap();
+    }
+    /**
+     * <code>map&lt;int32, .student.Student&gt; student_map = 4;</code>
+     */
+
+    public java.util.Map<java.lang.Integer, com.pb.protobuf.student.StudentProtobuf.Student> getStudentMapMap() {
+      return internalGetStudentMap().getMap();
+    }
+    /**
+     * <code>map&lt;int32, .student.Student&gt; student_map = 4;</code>
+     */
+
+    public com.pb.protobuf.student.StudentProtobuf.Student getStudentMapOrDefault(
+        int key,
+        com.pb.protobuf.student.StudentProtobuf.Student defaultValue) {
+      
+      java.util.Map<java.lang.Integer, com.pb.protobuf.student.StudentProtobuf.Student> map =
+          internalGetStudentMap().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;int32, .student.Student&gt; student_map = 4;</code>
+     */
+
+    public com.pb.protobuf.student.StudentProtobuf.Student getStudentMapOrThrow(
+        int key) {
+      
+      java.util.Map<java.lang.Integer, com.pb.protobuf.student.StudentProtobuf.Student> map =
+          internalGetStudentMap().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -256,6 +391,12 @@ public final class StudentProtobuf {
       for (int i = 0; i < student_.size(); i++) {
         output.writeMessage(3, student_.get(i));
       }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeIntegerMapTo(
+          output,
+          internalGetStudentMap(),
+          StudentMapDefaultEntryHolder.defaultEntry,
+          4);
       unknownFields.writeTo(output);
     }
 
@@ -275,6 +416,16 @@ public final class StudentProtobuf {
       for (int i = 0; i < student_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, student_.get(i));
+      }
+      for (java.util.Map.Entry<java.lang.Integer, com.pb.protobuf.student.StudentProtobuf.Student> entry
+           : internalGetStudentMap().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.Integer, com.pb.protobuf.student.StudentProtobuf.Student>
+        studentMap__ = StudentMapDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(4, studentMap__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -298,6 +449,8 @@ public final class StudentProtobuf {
           .equals(other.getCourseName());
       result = result && getStudentList()
           .equals(other.getStudentList());
+      result = result && internalGetStudentMap().equals(
+          other.internalGetStudentMap());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -316,6 +469,10 @@ public final class StudentProtobuf {
       if (getStudentCount() > 0) {
         hash = (37 * hash) + STUDENT_FIELD_NUMBER;
         hash = (53 * hash) + getStudentList().hashCode();
+      }
+      if (!internalGetStudentMap().getMap().isEmpty()) {
+        hash = (37 * hash) + STUDENT_MAP_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetStudentMap().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -424,6 +581,28 @@ public final class StudentProtobuf {
         return com.pb.protobuf.student.StudentProtobuf.internal_static_student_Course_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 4:
+            return internalGetStudentMap();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 4:
+            return internalGetMutableStudentMap();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -461,6 +640,7 @@ public final class StudentProtobuf {
         } else {
           studentBuilder_.clear();
         }
+        internalGetMutableStudentMap().clear();
         return this;
       }
 
@@ -500,6 +680,8 @@ public final class StudentProtobuf {
         } else {
           result.student_ = studentBuilder_.build();
         }
+        result.studentMap_ = internalGetStudentMap();
+        result.studentMap_.makeImmutable();
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -582,6 +764,8 @@ public final class StudentProtobuf {
             }
           }
         }
+        internalGetMutableStudentMap().mergeFrom(
+            other.internalGetStudentMap());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -945,6 +1129,129 @@ public final class StudentProtobuf {
           student_ = null;
         }
         return studentBuilder_;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.Integer, com.pb.protobuf.student.StudentProtobuf.Student> studentMap_;
+      private com.google.protobuf.MapField<java.lang.Integer, com.pb.protobuf.student.StudentProtobuf.Student>
+      internalGetStudentMap() {
+        if (studentMap_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              StudentMapDefaultEntryHolder.defaultEntry);
+        }
+        return studentMap_;
+      }
+      private com.google.protobuf.MapField<java.lang.Integer, com.pb.protobuf.student.StudentProtobuf.Student>
+      internalGetMutableStudentMap() {
+        onChanged();;
+        if (studentMap_ == null) {
+          studentMap_ = com.google.protobuf.MapField.newMapField(
+              StudentMapDefaultEntryHolder.defaultEntry);
+        }
+        if (!studentMap_.isMutable()) {
+          studentMap_ = studentMap_.copy();
+        }
+        return studentMap_;
+      }
+
+      public int getStudentMapCount() {
+        return internalGetStudentMap().getMap().size();
+      }
+      /**
+       * <code>map&lt;int32, .student.Student&gt; student_map = 4;</code>
+       */
+
+      public boolean containsStudentMap(
+          int key) {
+        
+        return internalGetStudentMap().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getStudentMapMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.Integer, com.pb.protobuf.student.StudentProtobuf.Student> getStudentMap() {
+        return getStudentMapMap();
+      }
+      /**
+       * <code>map&lt;int32, .student.Student&gt; student_map = 4;</code>
+       */
+
+      public java.util.Map<java.lang.Integer, com.pb.protobuf.student.StudentProtobuf.Student> getStudentMapMap() {
+        return internalGetStudentMap().getMap();
+      }
+      /**
+       * <code>map&lt;int32, .student.Student&gt; student_map = 4;</code>
+       */
+
+      public com.pb.protobuf.student.StudentProtobuf.Student getStudentMapOrDefault(
+          int key,
+          com.pb.protobuf.student.StudentProtobuf.Student defaultValue) {
+        
+        java.util.Map<java.lang.Integer, com.pb.protobuf.student.StudentProtobuf.Student> map =
+            internalGetStudentMap().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;int32, .student.Student&gt; student_map = 4;</code>
+       */
+
+      public com.pb.protobuf.student.StudentProtobuf.Student getStudentMapOrThrow(
+          int key) {
+        
+        java.util.Map<java.lang.Integer, com.pb.protobuf.student.StudentProtobuf.Student> map =
+            internalGetStudentMap().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearStudentMap() {
+        internalGetMutableStudentMap().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;int32, .student.Student&gt; student_map = 4;</code>
+       */
+
+      public Builder removeStudentMap(
+          int key) {
+        
+        internalGetMutableStudentMap().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.Integer, com.pb.protobuf.student.StudentProtobuf.Student>
+      getMutableStudentMap() {
+        return internalGetMutableStudentMap().getMutableMap();
+      }
+      /**
+       * <code>map&lt;int32, .student.Student&gt; student_map = 4;</code>
+       */
+      public Builder putStudentMap(
+          int key,
+          com.pb.protobuf.student.StudentProtobuf.Student value) {
+        
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableStudentMap().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;int32, .student.Student&gt; student_map = 4;</code>
+       */
+
+      public Builder putAllStudentMap(
+          java.util.Map<java.lang.Integer, com.pb.protobuf.student.StudentProtobuf.Student> values) {
+        internalGetMutableStudentMap().getMutableMap()
+            .putAll(values);
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3006,6 +3313,11 @@ public final class StudentProtobuf {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_student_Course_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_student_Course_StudentMapEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_student_Course_StudentMapEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_student_Student_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -3024,16 +3336,19 @@ public final class StudentProtobuf {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021studentbook.proto\022\007student\"L\n\006Course\022\n" +
-      "\n\002id\030\001 \001(\005\022\023\n\013course_name\030\002 \001(\t\022!\n\007stude" +
-      "nt\030\003 \003(\0132\020.student.Student\"\350\001\n\007Student\022\n" +
-      "\n\002id\030\001 \001(\005\022\022\n\nfirst_name\030\002 \001(\t\022\021\n\tlast_n" +
-      "ame\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\022+\n\005phone\030\005 \003(\0132" +
-      "\034.student.Student.PhoneNumber\032G\n\013PhoneNu" +
-      "mber\022\016\n\006number\030\001 \001(\t\022(\n\004type\030\002 \001(\0162\032.stu" +
-      "dent.Student.PhoneType\"%\n\tPhoneType\022\n\n\006M" +
-      "OBILE\020\000\022\014\n\010LANDLINE\020\001B*\n\027com.pb.protobuf" +
-      ".studentB\017StudentProtobufb\006proto3"
+      "\n\021studentbook.proto\022\007student\"\307\001\n\006Course\022" +
+      "\n\n\002id\030\001 \001(\005\022\023\n\013course_name\030\002 \001(\t\022!\n\007stud" +
+      "ent\030\003 \003(\0132\020.student.Student\0224\n\013student_m" +
+      "ap\030\004 \003(\0132\037.student.Course.StudentMapEntr" +
+      "y\032C\n\017StudentMapEntry\022\013\n\003key\030\001 \001(\005\022\037\n\005val" +
+      "ue\030\002 \001(\0132\020.student.Student:\0028\001\"\350\001\n\007Stude" +
+      "nt\022\n\n\002id\030\001 \001(\005\022\022\n\nfirst_name\030\002 \001(\t\022\021\n\tla" +
+      "st_name\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\022+\n\005phone\030\005 " +
+      "\003(\0132\034.student.Student.PhoneNumber\032G\n\013Pho" +
+      "neNumber\022\016\n\006number\030\001 \001(\t\022(\n\004type\030\002 \001(\0162\032" +
+      ".student.Student.PhoneType\"%\n\tPhoneType\022" +
+      "\n\n\006MOBILE\020\000\022\014\n\010LANDLINE\020\001B*\n\027com.pb.prot" +
+      "obuf.studentB\017StudentProtobufb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3052,7 +3367,13 @@ public final class StudentProtobuf {
     internal_static_student_Course_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_student_Course_descriptor,
-        new java.lang.String[] { "Id", "CourseName", "Student", });
+        new java.lang.String[] { "Id", "CourseName", "Student", "StudentMap", });
+    internal_static_student_Course_StudentMapEntry_descriptor =
+      internal_static_student_Course_descriptor.getNestedTypes().get(0);
+    internal_static_student_Course_StudentMapEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_student_Course_StudentMapEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_student_Student_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_student_Student_fieldAccessorTable = new

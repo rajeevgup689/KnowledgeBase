@@ -9,6 +9,7 @@ message Course {
 	int32 id = 1;
 	string course_name = 2;
 	repeated Student student = 3;
+	map<int32, Student> student_map = 4;
 }
 
 message Student {

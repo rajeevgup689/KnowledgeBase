@@ -24,31 +24,33 @@ public class SpringProtobufPocApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringProtobufPocApplication.class, args);
 	}
-	
-	@Bean
-    RestTemplate restTemplate(ProtobufHttpMessageConverter hmc) {
-        return new RestTemplate(Arrays.asList(hmc));
-    }
 
-    @Bean
-    ProtobufHttpMessageConverter protobufHttpMessageConverter() {
-        return new ProtobufHttpMessageConverter();
-    }
+	@Bean
+	RestTemplate restTemplate(ProtobufHttpMessageConverter hmc) {
+		return new RestTemplate(Arrays.asList(hmc));
+	}
+
+	@Bean
+	ProtobufHttpMessageConverter protobufHttpMessageConverter() {
+		return new ProtobufHttpMessageConverter();
+	}
 
 	@Bean
 	public CourseRepository createTestCourses() {
 		Map<Integer, Course> courseMap = new HashMap<>();
 
 		Course course1 = Course.newBuilder().setId(1).setCourseName("REST with Spring")
-				.addAllStudent(createTestStudents()).build();
+				.addAllStudent(createTestStudents()).putStudentMap(1, createStudent(1, "John", "Doe",
+						"john.doe@baeldung.com", Arrays.asList(createPhone("123456", PhoneType.MOBILE))))
+				.build();
 
 		Course course2 = Course.newBuilder().setId(2).setCourseName("Learn Spring Security")
-				.addAllStudent(new ArrayList<>()).build();
+				.addAllStudent(new ArrayList<>()).putStudentMap(2, Student.newBuilder().build()).build();
 
+		Student student = createStudent(4, "Rajeev", "Gupta", "rajeev.gupta@pb.com",
+				Arrays.asList(createPhone("23456789", PhoneType.MOBILE)));
 		Course course3 = Course.newBuilder().setId(3).setCourseName("Spring Boot with protocol buffer")
-				.addAllStudent(Arrays.asList(createStudent(4, "Rajeev", "Gupta", "rajeev.gupta@pb.com",
-						Arrays.asList(createPhone("23456789", PhoneType.MOBILE)))))
-				.build();
+				.addAllStudent(Arrays.asList(student)).putStudentMap(3, student).build();
 
 		courseMap.put(course1.getId(), course1);
 		courseMap.put(course2.getId(), course2);
