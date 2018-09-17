@@ -60,8 +60,7 @@ public class SpringProtobufPocApplicationTests {
     }
 
     private void assertResponse(String response) {
-    	//System.out.println("inside assertResponse ...");
-        assertThat(response, containsString("id"));
+    	assertThat(response, containsString("id"));
         assertThat(response, containsString("course_name"));
         assertThat(response, containsString("REST with Spring"));
         assertThat(response, containsString("student"));
