@@ -13,10 +13,10 @@ import com.pb.demo.util.Utility;
 public class IncomeDataPublisher {
 
 	public static void main(String args[]) {
-
-		File fileObj = new File(Constants.filePath);
+		
+		File fileObj = new File(Constants.inputFileName);
 		try {
-			String fileFormat = Utility.getFileFormat(fileObj, Constants.filePath);
+			String fileFormat = Utility.getFileFormat(fileObj, Constants.inputFileName);
 			FileParser parser = FileParserFactory.getObject(fileFormat);
 			Map<String, List<IncomeData>> data = parser.loadData(fileObj);
 			File generatedFile = parser.generateFile(data, Constants.fileOutputPath);
