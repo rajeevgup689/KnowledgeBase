@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
 
-	private static Class appClass = Application.class;
+	private static Class<Application> appClass = Application.class;
 
 	public static void main(String[] args) {
 		SpringApplication.run(appClass, args);

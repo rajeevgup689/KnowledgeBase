@@ -3,6 +3,8 @@ package com.rajeev.controller;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -13,6 +15,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.rajeev.model.User;
 
+/**
+ * https://howtodoinjava.com/spring-boot2/spring-rest-request-validation/
+ * 
+ * @author RA016GU
+ *
+ */
+
 @Controller
 public class UserController {
 
@@ -22,14 +31,14 @@ public class UserController {
 	}
 
 	@RequestMapping(path = "/user/{id}", method = RequestMethod.GET)
-	public ResponseEntity<User> listUser(@PathVariable(value = "id") String id) {
+	public ResponseEntity<User> getUser(@PathVariable(value = "id") String id) {
 		return new ResponseEntity<User>(
 				getUsers().stream().filter(user -> user.getId().equals(id)).findFirst().orElse(null), HttpStatus.OK);
 
 	}
 
 	@RequestMapping(path = "/user", method = RequestMethod.POST)
-	public ResponseEntity<String> listUser(@RequestBody User user) {
+	public ResponseEntity<String> postUser(@Valid @RequestBody User user) {
 		return new ResponseEntity<String>("18", HttpStatus.OK);
 	}
 
