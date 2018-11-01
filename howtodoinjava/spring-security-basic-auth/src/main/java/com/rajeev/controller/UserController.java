@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.rajeev.exception.RecordNotFoundException;
 import com.rajeev.model.User;
 
 /**
@@ -32,9 +33,13 @@ public class UserController {
 
 	@RequestMapping(path = "/user/{id}", method = RequestMethod.GET)
 	public ResponseEntity<User> getUser(@PathVariable(value = "id") String id) {
-		return new ResponseEntity<User>(
-				getUsers().stream().filter(user -> user.getId().equals(id)).findFirst().orElse(null), HttpStatus.OK);
+		User userResponse = getUsers().stream().filter(user -> user.getId().equals(id)).findFirst().orElse(null);
 
+		if (userResponse == null) {
+			throw new RecordNotFoundException("Invalid user id : " + id);
+		}
+
+		return new ResponseEntity<User>(userResponse, HttpStatus.OK);
 	}
 
 	@RequestMapping(path = "/user", method = RequestMethod.POST)
