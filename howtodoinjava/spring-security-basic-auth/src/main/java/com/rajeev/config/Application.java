@@ -1,11 +1,11 @@
-package com.developerstack.config;
+package com.rajeev.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan(basePackages = "com.developerstack")
+@ComponentScan(basePackages = "com.rajeev")
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
 

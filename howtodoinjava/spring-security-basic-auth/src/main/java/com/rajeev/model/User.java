@@ -1,4 +1,4 @@
-package com.developerstack.model;
+package com.rajeev.model;
 
 public class User {
 
