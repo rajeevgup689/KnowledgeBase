@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.howtodoinjava.example.sampleservice</groupId>
-	<artifactId>com.howtodoinjava.example.sampleservice</artifactId>
+	<artifactId>sample-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
